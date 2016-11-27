@@ -69,8 +69,8 @@ void ice_cream_div(int number, double total_weight)
 // with &, the parameters are not given values but given the memory locations associated with the name
 // so call-by-reference parameters can change later
 // when function exits, the local variables gone, but those parameters can continue 
-void get_numbers(int& input1, int& input2);
-void swap_values(int& variable1, int& variable2);
+void get_numbers(int &input1, int &input2);
+void swap_values(int &variable1, int &variable2);
 void show_results(int output1, int output2);
 
 int main()
@@ -84,7 +84,7 @@ int main()
     return 0;
 }
 
-void get_numbers(int& input1, int& input2)
+void get_numbers(int &input1, int &input2)
 {
     using namespace std;
     cout << "Enter two integers:";
@@ -94,7 +94,7 @@ void get_numbers(int& input1, int& input2)
     
 }
 
-void swap_values(int& variable1, int& variable2)
+void swap_values(int &variable1, int &variable2)
 {
     int temp;
     // variable1 = variable2;
@@ -114,7 +114,7 @@ void show_results(int output1, int output2)
 // 5.6 comparing argument mechanism
 #include <iostream>
 
-void do_stuff(int par1_value, int& par2_ref);
+void do_stuff(int par1_value, int &par2_ref);
 
 int main()
 {
@@ -130,7 +130,7 @@ int main()
     return 0;
 }
 
-void do_stuff(int par1_value, int& par2_ref)
+void do_stuff(int par1_value, int &par2_ref)
 {
     using namespace std;
     par1_value = 111;
@@ -145,9 +145,9 @@ void do_stuff(int par1_value, int& par2_ref)
 
 // 5.8 function calling another function
 #include <iostream>
-void get_numbers(int& input1, int& input2);
-void swap_values(int& variable1, int& variable2);
-void order(int& n1, int& n2);
+void get_numbers(int &input1, int &input2);
+void swap_values(int &variable1, int &variable2);
+void order(int &n1, int &n2);
 void show_results(int output1, int output2);
 
 int main()
@@ -161,7 +161,7 @@ int main()
     return 0;
 }
 
-void get_numbers(int& input1, int& input2)
+void get_numbers(int &input1, int &input2)
 {
     using namespace std;
     cout << "Enter two integers:";
@@ -171,7 +171,7 @@ void get_numbers(int& input1, int& input2)
     
 }
 
-void swap_values(int& variable1, int& variable2)
+void swap_values(int &variable1, int &variable2)
 {
     int temp;
     // variable1 = variable2;
@@ -181,7 +181,7 @@ void swap_values(int& variable1, int& variable2)
     variable2 = temp;
 }
 
-void order(int& n1, int& n2)
+void order(int &n1, int &n2)
 {
     if(n1>n2)
         swap_values(n1,n2);
@@ -226,7 +226,7 @@ void introduction()
 }
 
 // note the vales change in the funciton, need call-by-reference parameters
-void get_input(double& cost, int& turnover)
+void get_input(double &cost, int &turnover)
 {
     using namespace std;
     cout << "Enter the wholesale cost of item: $";

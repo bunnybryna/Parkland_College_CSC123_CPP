@@ -30,7 +30,7 @@ cin.getline(a,80);
 // cctype is for atoi
 #include <cctype>
 
-void read_and_clean(int& n);
+void read_and_clean(int &n);
 void new_line();
 int main()
 {
@@ -51,7 +51,7 @@ int main()
 }
 
 // the other way to do this is to return n=read_and_clean();
-void read_and_clean(int& n)
+void read_and_clean(int &n)
 {
     using namespace std;
     const int ARRAY_SIZE=6;
@@ -124,7 +124,7 @@ void new_line()
 }
 
 
-getline(istream& ins, string& strVarialbe, char delimiter);
+getline(istream &ins, string &strVarialbe, char delimiter);
 // getline will stop when the question mark encountered
 getline(cin, line, '?'); 
 // getline will read a line of text into s1 and a string of nonwhitespace into s2 
@@ -143,11 +143,11 @@ str.at(2)='x';
 #include <cctype>
 using namespace std;
 
-void swap(char& v1, char& v2);
-string reverse(const string& s);
-string remove_punct(const string& s, const string& punct);
-string make_lower(const string& s);
-bool is_pal(const string& s);
+void swap(char &v1, char &v2);
+string reverse(const string &s);
+string remove_punct(const string &s, const string &punct);
+string make_lower(const string &s);
+bool is_pal(const string &s);
 // you can remove all the consts and & in the function header
 // because s is not changed within each function, can be a call-by-value parameter
 // at the beginning of each function ,we always make a copy of s and make changes on that copy
@@ -172,7 +172,7 @@ int main()
     return 0;
 }
 
-bool is_pal(const string& s)
+bool is_pal(const string &s)
 {
     string punct(",;:.?'\" ");
     // make a copy of s named str
@@ -184,7 +184,7 @@ bool is_pal(const string& s)
     return (lower_str == reverse(lower_str));
 }
 
-string make_lower(const string& s)
+string make_lower(const string &s)
 {
     string temp(s);
     for (int i=0;i<s.length();i++)
@@ -193,7 +193,7 @@ string make_lower(const string& s)
     return temp;
 }
 
-string reverse(const string& s)
+string reverse(const string &s)
 {
     int start = 0;
     int end = s.length();
@@ -209,14 +209,14 @@ string reverse(const string& s)
     return temp;
 }
 
-void swap(char& v1, char& v2)
+void swap(char &v1, char &v2)
 {
     char temp = v1;
     v1 = v2;
     v2 = temp;
 }
 
-string remove_punct(const string& s, const string& punct)
+string remove_punct(const string &s, const string &punct)
 {
     string no_punct;
     int s_length=s.length();

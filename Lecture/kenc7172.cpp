@@ -183,7 +183,7 @@ void randomFill(int a[], int s)
 
 using namespace std;
 
-void addName(string f[], string l[], int& s);
+void addName(string f[], string l[], int &s);
 void listName(string f[], string l[], int s);
 void putInOrder(string f[], string l[], int pos);
 
@@ -204,7 +204,7 @@ int main()
     return 0;
 }
 
-void addName(string f[], string l[], int& s)
+void addName(string f[], string l[], int &s)
 {
     cout << "Enter first name:";
     getline(cin, f[s]);

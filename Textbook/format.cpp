@@ -110,3 +110,20 @@ strcpy(a_string, "Hello");
 string phase;
 // initialized to a string value equivalent to the C-string "ants"
 string noun("ants");
+
+// pointers
+type_name *variable_name1, *variable_name2,...;
+// the following sets the value of p so that p points to the variable v 
+p = &v;
+
+// type definitions
+typedef known_type_definition new_type_name;
+typedef int* IntPtr;
+
+// dynamic array
+typedef double* DoubleArrayPtr;
+DoubleArrayPtr a;
+// size variable can be given using an int variable or int expressions
+a = new double[array_size];
+// call delete[] with empty [] 
+delete [] a;

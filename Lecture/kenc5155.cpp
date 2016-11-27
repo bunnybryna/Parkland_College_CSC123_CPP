@@ -114,7 +114,7 @@ using namespace std;
 int main()
 {
     int number;
-    int& aliasNum = number;
+    int &aliasNum = number;
     // aliasNum and number are the same item with two names
     // they are always the same value
     //34,34
@@ -146,7 +146,7 @@ int main()
 using namespace std;
 
 int addOneA(int number);
-void addOneB(int& number);
+void addOneB(int &number);
 
 int main()
 {
@@ -170,7 +170,7 @@ int addOneA(int number)
 }
 
 // call by reference, return nothing
-void addOneB(int& number)
+void addOneB(int &number)
 {
     number ++;
 }
@@ -180,7 +180,7 @@ void addOneB(int& number)
 
 using namespace std;
 
-void getInput(string& noun, string& verb, string& adj, string& adv);
+void getInput(string &noun, string &verb, string &adj, string &adv);
 
 void printMadlib(string noun, string verb, string adj, string adv);
 
@@ -194,7 +194,7 @@ int main()
     return 0;
 }
 
-void getInput(string& noun, string& verb, string& adj, string& adv)
+void getInput(string &noun, string &verb, string &adj, string &adv)
 {
     cout << "Enter a noun:";
     cin>> noun;
@@ -283,7 +283,7 @@ using namespace std;
 int main()
 {
     int x = 15;
-    int& y = x;
+    int &y = x;
     // y is x's reference, you can't do & y = 4 
     // reference can't set to constants or expressions
     // references must be the same type
@@ -310,7 +310,7 @@ int main()
 #include <ctime>
 
 using namespace std;
-void roll2Dice(int& d1, int& d2);
+void roll2Dice(int &d1, int &d2);
 
 int main()
 {
@@ -330,7 +330,7 @@ int main()
     return 0;
 }
 
-void roll2Dice (int& d1, int& d2);
+void roll2Dice (int &d1, int &d2);
 {
     d1 = rand() %6 +1;
     d2 = rand() %6 +1;
@@ -365,7 +365,7 @@ value = 13;
 
 using namespace std;
 
-int doSomething(int& value);
+int doSomething(int &value);
 
 int main()
 {

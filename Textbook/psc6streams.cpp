@@ -158,7 +158,7 @@ the average is sum/count.
 
 using namespace std;
 // stream parameters must be call_by_reference
-void make_neat(ifstream& messy_file, ofstream& neat_file,
+void make_neat(ifstream &messy_file, ofstream &neat_file,
                 int number_after_dec, int field_width);
 int main()
 {
@@ -186,7 +186,7 @@ int main()
     return 0;
 }                
 
-void make_neat(ifstream& messy_file, ofstream& neat_file,
+void make_neat(ifstream &messy_file, ofstream &neat_file,
                int number_after_dec, int field_width)
 {
     neat_file.setf(ios::fixed);
@@ -238,7 +238,7 @@ fin.putback(next);
 using namespace std;
 
 void new_line();
-void get_int(int& number);
+void get_int(int &number);
 
 int main()
 {
@@ -260,7 +260,7 @@ void new_line()
     }while (symbol != '\n');
 }
 
-void get_int(int& number)
+void get_int(int &number)
 {
     char ans;
     do 
@@ -288,7 +288,7 @@ void get_int(int& number)
 // another new_line function
 // when you call the function, new_line(fin) is taking input from an input stream
 // new_line(cin) is reading some input from the keyboard
-void new_line(istream& in_stream)
+void new_line(istream &in_stream)
 {
     char symbol;
     do{
@@ -299,7 +299,7 @@ void new_line(istream& in_stream)
 // default arguments for functions
 // if you call this function as new_line(), it takes the default argument cin
 // if you call as new_line(fin), it override the default 
-void new_line(istream& in_stream =  cin)
+void new_line(istream &in_stream =  cin)
 {
     char symbol;
     do
@@ -324,7 +324,7 @@ default_args(6,7,8)
 #include <cstdlib>
 
 using namespace std;
-void add_plus_plus(ifstream& in_stream, ofstream& out_stream);
+void add_plus_plus(ifstream &in_stream, ofstream &out_stream);
 
 int main()
 {
@@ -350,7 +350,7 @@ int main()
     return 0;
 }
 
-void add_plus_plus(ifstream& in_stream, ofstream& out_stream)
+void add_plus_plus(ifstream &in_stream, ofstream &out_stream)
 {
     char next;
     // get is used here to read the whitespace and '\n',

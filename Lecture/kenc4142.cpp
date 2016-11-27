@@ -1,7 +1,8 @@
+
 // built in functions
 #include <cstdlib>
 #include <iostream>
-#include <cmath>      // this contains the declaration of sqrt
+#include <cmath>
 
 using namespace std;
 
@@ -10,25 +11,22 @@ int main()
     double parameter;
     double returnValue;
     
-    cout << "Enter a deimal number I will return the " << endl
-         << "Square root: " ;
-         
+    cout << "Enter a decimal number I will return the "<< endl
+         << "Square root:";
     cin >> parameter;
     
-    // call the function with a parameter and
-    // get the return value back
     returnValue = sqrt(parameter);
     
-    cout << "The square root of " << parameter << " is "
+    cout << "The square root of "<< parameter << " is "
          << returnValue;
-
+         
     return 0;
 }
 
-// type casting
+//type casting
 #include <cstdlib>
 #include <iostream>
-#include <cmath>      // this contains the definition of sqrt
+#include <cmath>
 
 using namespace std;
 
@@ -38,13 +36,11 @@ int main()
     double returnValue;
     
     cout << "Enter a decimal number I will return the " << endl
-         << "Square root: " ;
+         << " sqaure root:";
          
     cin >> parameter;
     
-    // This function no longer compiles when the 
-    // parameter is defined as in int
-    returnValue = sqrt( static_cast<double>(parameter) ) ;
+    returnValue = sqrt(static_cast<double>(parameter));
     
     cout << "The square root of " << parameter << " is "
          << returnValue;
@@ -52,18 +48,35 @@ int main()
     return 0;
 }
 
-// srand() vs rand()
-// bad code 
-for (int i=0;i<1000;i++) { 
-  srand((unsigned)time(0));   // srand 'resets' the random number incorrectly here!
-  cout << rand();
+// srand()
+// bad code
+for (int i=0; i<1000; i++){
+    srand((unsigned)time(0))
+    cout << rand();
+    
 }
 
 // good code
-// srand(time(0) called only once at the beginning of main()
-srand((unsigned)time(0)); 
-for (int i=0;i<1000;i++) { 
-  cout << rand();
+// the pseudo-random number generator should only be seeded once
+// before any calls to rand(), and the start of the program
+// It should not be repeatedly seeded or reseeded every time you wish to generate a new batch of pseudo-random numbers
+srand((unsigned)time(0));
+for (int i=0;i<1000;i++){
+    cout << rand();
+}
+
+//an example of srand() and rand()
+//https://www.youtube.com/watch?v=PZZUJ1fxG04
+#include <cstdlib>
+#include <iostream>
+#include <ctime>
+ 
+int main() 
+{
+    std::srand(std::time(0)); //use current time as seed for random generator
+    int random_variable = std::rand();
+    std::cout << "Random value on [0 " << RAND_MAX << "]: " 
+              << random_variable << '\n';
 }
 
 //rand() example

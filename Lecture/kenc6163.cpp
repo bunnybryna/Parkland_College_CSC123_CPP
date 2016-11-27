@@ -169,7 +169,7 @@ int main()
 
 using namespace std;
 // when passing streams as parameters, make sure to use ostream& and istream&
-void starPrefix(ostream& out, string s);
+void starPrefix(ostream &out, string s);
 
 int main()
 {
@@ -188,7 +188,7 @@ int main()
     return 0;
 }
 
-void starPrefix(ostream& out, string s)
+void starPrefix(ostream &out, string s)
 {
     out << "**** " << s;
     

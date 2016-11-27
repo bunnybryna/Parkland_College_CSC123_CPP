@@ -50,6 +50,12 @@ int main()
     return 0;
 }
 
+// capcity and size:
+// capacity is always greater than or equal to size
+// you cannot index beyond element # size()-1
+// the size is the number of elements in the vector 
+// and the capacity is the maximum number of elements the vector can currently hold
+
 // using vector as an array
 #include <iostream>
 #include <iomanip>
@@ -130,3 +136,113 @@ void addOneWord(vector<string>& list)
     getline(cin,word);
     list.push_back(word);
 }
+
+// vector insert(), begin(), end()
+#include <iostream>
+#include <vector>
+
+using namespace std;
+int main()
+{
+    vector<int> numberList;
+    numberList.push_back(20);
+    numberList.push_back(30);
+    numberList.push_back(40);
+    numberList.push_back(10);
+    
+    numberList.insert(numberList.begin(),-1);
+    numberList.insert(numberList.end(),-2);
+    cout << "numberList has " << numberList.size() << " elements!" << endl;
+    for (int i=0;i<numberList.size();i++)
+    {
+        cout << "numberList position " << i << " has the value " << numberList.at(i) << endl;
+    }
+    return 0;
+}
+
+
+// vector iterator
+#include <iostream>
+#include <vector>
+using namespace std;
+int main()
+{
+    vector<int> numberList;
+    numberList.push_back(20);
+    numberList.push_back(30);
+    numberList.push_back(40);
+    numberList.push_back(10);
+    
+    cout << "numberList has " << numberList.size() << " elements!" << endl;
+    vector<int>::iterator iter;
+    for (iter = numberList.begin(); iter!= numberList.end(); iter++)
+    {
+        cout << *iter << endl;
+    }
+    
+    return 0;
+}
+
+// using iterators
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+void fillRandom(vector<int>& l, int n);
+void printList(vector<int> l);
+
+int main()
+{
+    srand(time(0));
+    vector<int> numberList;
+    int number;
+    vector<int>::iterator it;
+
+    fillRandom(numberList,10);
+    printList(numberList);
+
+    cout << "Enter a value:" << endl;
+    cin >> number;
+
+    it = find(numberList.begin(),numberList.end(),number);
+    cout << *it;
+
+    if (numberList.end() == it)
+    {
+        cout << "Not found!" << endl;
+    }
+    if (number == *it)
+    {
+        cout << "Found!(not always correct!)" << endl;
+    }
+    if (numberList.end() != it)
+    {
+        // just demonstate how to erase the element before it
+        numberList.erase(it-1);
+    }
+
+    printList(numberList);
+
+    return 0;
+}
+
+void fillRandom(vector<int>& l, int n)
+{
+    for (int i=0; i< n; i++)
+    {
+        l.push_back(rand());
+    }
+}
+
+void printList(vector<int> l)
+{
+    vector<int>::iterator it;
+    for (it = l.begin();it != l.end(); it++)
+    {
+        cout << *it << endl;
+    }
+}
+

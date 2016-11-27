@@ -101,7 +101,7 @@ void scale(int a[], int size);
 
 void graph(const int asterisk[], int last_plant_number);
 
-void get_total(int& sum);
+void get_total(int &sum);
 
 int roundnew(double number);
 
@@ -142,7 +142,7 @@ void input_data(int a[], int last_plant_number)
 // but what's the point of giving sum a value and after the function, replaced by a new value? 
 // then soluction 2 is better: int get_total() and return sum; see page 205
 
-void get_total(int& sum)
+void get_total(int &sum)
 {
     using namespace std;
     cout << "Enter number units produced by each department:\n"
@@ -197,7 +197,7 @@ void print_asterisk(int n)
 #include <iostream>
 const int MAX_NUMBER_SCORES =10;
 
-void fill_array(int a[], int size, int& number_used);
+void fill_array(int a[], int size, int &number_used);
 
 double compute_average(const int a[], int number_used);
 
@@ -218,7 +218,7 @@ int main()
     return 0;
 }
 
-void fill_array(int a[], int size, int& number_used)
+void fill_array(int a[], int size, int &number_used)
 {
     using namespace std;
     cout << "Enter up to " << size << " nonnegative whole numbers.\n"
@@ -271,7 +271,7 @@ void show_difference(const int a[], int number_used)
 
 const int DECLARED_SIZE = 20;
 
-void fill_array(int a[], int size, int& number_used);
+void fill_array(int a[], int size, int &number_used);
 
 int search(const int a[], int number_used, int target);
 
@@ -305,7 +305,7 @@ int main()
     cout << "End of program.\n";
 }
 
-void fill_array(int a[], int size, int& number_used)
+void fill_array(int a[], int size, int &number_used)
 {
     using namespace std;
     cout << "Enter up to " << size << " nonnegative whole numbers.\n"
@@ -369,7 +369,7 @@ int main()
     return 0;
 }
 
-void fill_array(int a[], int size, int& number_used)
+void fill_array(int a[], int size, int &number_used)
 {
     using namespace std;
     cout << "Enter up to " << size << " nonnegative whole numbers.\n"
@@ -425,13 +425,13 @@ int index_smallest(const int a[], int start_index, int number_used)
 #include <cmath>
 const int NUMBER_STUDENTS =4, NUMBER_QUIZZES = 3;
 
-void fill_array(int a[][3],int row, int column );
+void fill_array(int a[][3],int row, int column);
 
 void compute_st_ave(const int grade[][NUMBER_QUIZZES], double st_ave[]);
 
 void compute_qz_ave(const int grade[][NUMBER_QUIZZES], double qz_ave[]);
 
-void display(const int grade[][NUMBER_QUIZZES]);
+void display(const int grade[][NUMBER_QUIZZES], const double st_ave[], const double qz_ave[]);
 
 int main()
 {
@@ -441,46 +441,38 @@ int main()
     double qz_ave[NUMBER_QUIZZES];
 
 
-    fill_array(grade,NUMBER_STUDENTS, NUMBER_QUIZZES);
+    fill_array(grade,NUMBER_STUDENTS,NUMBER_QUIZZES);
     compute_st_ave(grade, st_ave);
     compute_qz_ave(grade, qz_ave);
-    display(grade);
+    display(grade, st_ave, qz_ave);
 
     return 0;
 }
 void fill_array(int a[][3],int row, int column)
 {
     using namespace std;
-
     for (int i=0; i<row; i++)
     {
-        cout << "Enter quiz scores for student " << i+1 << endl
-              << "Mark the end with a negative number.\n";
+        cout << "Enter quiz scores for student " << i+1 << endl;
         for (int j=0; j<column; j++)
         {
-            int next=0;
-            cin >> next;
-            while(next>=0)
-            {
-                a[i][j] = next;
-                cin >> next;
-            }
+            cin >> a[i][j];
         }
     }
 }
 
-void compute_st_ave(const int grade[][NUMBER_QUIZZES], double st_ave)
+void compute_st_ave(const int grade[][NUMBER_QUIZZES], double st_ave[])
 {
     for (int st_num = 1; st_num <= NUMBER_STUDENTS; st_num++)
     {
         double sum = 0;
         for (int qz_num = 1; qz_num <= NUMBER_QUIZZES; qz_num++)
             sum = sum + grade[st_num - 1][qz_num - 1];
-        st_ave[st_num - 1] = static_cast<double>(sum / NUMBER_QUIZZES);
+        st_ave[st_num - 1] = sum / NUMBER_QUIZZES;
     }
 }
 // note that qz_ave is an array, qz_ave[0], [1], [2]
-void compute_qz_ave(const int grade[][NUMBER_QUIZZES], double qz_ave);
+void compute_qz_ave(const int grade[][NUMBER_QUIZZES], double qz_ave[])
 {
     for (int qz_num = 1; qz_num <= NUMBER_QUIZZES; qz_num ++ )
     {
@@ -489,7 +481,7 @@ void compute_qz_ave(const int grade[][NUMBER_QUIZZES], double qz_ave);
         {
             sum = sum + grade[st_num - 1][qz_num - 1];
         }
-        qz_ave[qz_num - 1] = static_cast<double>(sum / NUMBER_STUDENTS);
+        qz_ave[qz_num - 1] = sum / NUMBER_STUDENTS;
     }
 }
 

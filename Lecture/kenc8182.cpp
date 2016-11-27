@@ -6,7 +6,7 @@
 
 using namespace std;
 
-void shuffle(string& str);
+void shuffle(string &str);
 
 int main()
 {
@@ -26,7 +26,7 @@ int main()
     return 0;
 }
 
-void shuffle(string& str)
+void shuffle(string &str)
 {
     int randomPos;
     char temp;
@@ -60,7 +60,7 @@ int main()
 #include <iostream>
 
 using namespace std;
-void shuffle(string& str);
+void shuffle(string &str);
 int main()
 {
     string nout;
@@ -85,7 +85,7 @@ int main()
 //appending c++ strings two ways
 #include <iostream>
 using namespace std;
-void shuffle(string& str);
+void shuffle(string &str);
 int main()
 {
     string s;
