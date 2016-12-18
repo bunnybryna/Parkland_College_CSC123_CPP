@@ -63,13 +63,13 @@ using namespace std;
 void shuffle(string &str);
 int main()
 {
-    string nout;
+    string noun;
     string verb;
     string sentence="The .";
     
     int times;
     cout << "Enter a noun:";
-    getline(cin,nout);
+    getline(cin,noun);
     cout << "Enter a verb:";
     getline(cin,verb);
     

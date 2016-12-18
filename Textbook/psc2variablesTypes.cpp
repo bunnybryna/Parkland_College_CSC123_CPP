@@ -108,7 +108,7 @@ int main()
     cout << "Once more with a space:\n";
     symbol3 = ' ';
     cout << symbol1 << symbol3 << symbol2 << endl;
-    cout << "Thats all.";
+    cout << "That's all.";
     return 0;
 }
 

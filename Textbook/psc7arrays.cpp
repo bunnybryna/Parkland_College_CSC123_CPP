@@ -233,7 +233,7 @@ void fill_array(int a[], int size, int &number_used)
         index++;
         cin >> next;
     }
-    // note that number_used = index not index-1
+    // note that number_used = index not index+1
     // because index ++ in the above while loop
     number_used = index;
 }

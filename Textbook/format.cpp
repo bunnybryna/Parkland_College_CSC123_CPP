@@ -127,3 +127,30 @@ DoubleArrayPtr a;
 a = new double[array_size];
 // call delete[] with empty [] 
 delete [] a;
+
+// structure types
+struct Structure_Tag
+{
+    type_1 member_variable_name1;
+    type_2 member_variable_name2;
+    ...
+};
+// examples
+struct Automobile
+{
+    int year;
+    int doors;
+    double horse_power;
+    char model;
+};
+
+
+// call a constructor
+Class_name object_name(arguments_for_Constructor);
+object=Constructor_name(arguments_for_Constructor);
+// examples
+BankAccount account1(100, 2.3);
+account1 = BankAccount(200,3.5);
+// can create a dynamic variable too 
+BankAccount *myAccount;
+myAccount = new BankAccount(300, 4.3);

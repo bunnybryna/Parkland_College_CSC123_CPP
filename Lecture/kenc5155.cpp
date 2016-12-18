@@ -105,7 +105,7 @@ int main()
 
 bool isOdd(int number)
 {
-    return number%2 != 0;
+    return (number%2 != 0);
 }
 
 #include <iostream>
@@ -175,7 +175,7 @@ void addOneB(int &number)
     number ++;
 }
 
-// maslib 
+// madlib 
 #include <iostream>
 
 using namespace std;

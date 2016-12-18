@@ -147,14 +147,14 @@ int main()
 {
     int array[SIZE];
     srand(time(0));
-    
+
     randomFill(array,SIZE);
     printArray(array,SIZE);
-    
+
     return 0;
 }
 
-void printArray(int a[], int s)
+void randomFill(int a[], int s)
 {
     int i;
     for (i=0;i<s;i++)
@@ -163,7 +163,7 @@ void printArray(int a[], int s)
     }
 }
 
-void randomFill(int a[], int s)
+void printArray(int a[], int s)
 {
     int i;
     for (i=0;i<s;i++)
@@ -175,6 +175,7 @@ void randomFill(int a[], int s)
     }
     cout << endl;
 }
+
 
 // parallel arrays
 #include <iostream>

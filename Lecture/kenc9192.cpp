@@ -186,7 +186,7 @@ void addTo(int *pv)
     *pv += 10;
 }
 
-vod addToPtr(int *, int);
+void addToPtr(int *, int);
 
 int main()
 {

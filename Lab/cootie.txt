@@ -1,0 +1,98 @@
+Make sure you read all the way to the bottom.
+
+Notice that my rules are different from Wikipedia.
+
+You HAVE to use my rules, not the rules on Wikipedia, to get ANY credit.
+
+Generate a random number from 1 to 7 and use it to pick which part to add.
+Write the logic that completes the following table:
+If the Roll is:	You can add this Body Part	if you already have this part	Maximum Number you may have.  Also the number required to finish the cootie
+ 1	Body	none	1
+ 2	Head	Body	1
+ 3	Antenna	Head	2
+ 4	Wings	Body	2
+ 5	Stinger	Body	1
+ 6	Legs	Body	4
+7	Eyes	Head	6
+Add a loop around the above logic.  Have the loop end when the cootie is completed.  To make sure the loop around the whole program is correct and will eventually end; you'll need to keep track of what parts have rolled already and how many of have been rolled.  Create counters (int numLegs=0;) and increment (numLegs++) them when appropriate. (if (roll==1) {numBody=1;} )
+With all that done, change the if so that you can only place pieces if the prerequisites are met.  To add a leg, you need to have a body and the right dice roll. The code will look similar to:
+if (roll == 6 && numBody == 1)
+{
+    numLegs ++;
+}
+Consider what to do with the maximum number too.  Your comments do not have to match mine.
+Dice roll is a 5
+No body, can't add a stinger :(
+Cootie so far 0 body, 0 head, 0 antenna, 0 wings, 0 stingers, 0 legs, 0 Eyes
+
+Dice roll is a 1
+Yeah, you can add the body!
+Cootie so far 1 body, 0 head, 0 antenna, 0 wings, 0 stingers, 0 legs, 0 Eyes
+
+Dice roll is a 1
+You already have a body :(
+Cootie so far 1 body, 0 head, 0 antenna, 0 wings, 0 stingers, 0 legs, 0 Eyes
+
+Dice roll is a 2
+Yeah, you got the head!
+Cootie so far 1 body, 1 head, 0 antenna, 0 wings, 0 stingers, 0 legs, 0 Eyes
+
+Dice roll is a 6
+Yeah, you got a leg!
+Cootie so far 1 body, 1 head, 0 antenna, 0 wings, 0 stingers, 1 legs, 0 Eyes
+
+Dice roll is a 6
+Yeah, you got a leg!
+Cootie so far 1 body, 1 head, 0 antenna, 0 wings, 0 stingers, 2 legs, 0 Eyes
+
+and so on.
+
+The overview of your code may look like:
+
+while (cootie isn't completed)
+
+{
+
+      get the input
+
+      if (the input is a 1)
+
+     {
+
+          do the work to add a body
+
+     }
+
+ 
+
+     if (the input is a 2 and we can add a head)
+
+     {
+
+          do the work to add a head
+
+     }
+
+    (add the rest of the body parts)
+
+}
+
+Now make it so that you can play many games of cootie over and over again:  (Include the number of rolls that were required to make the cootie)
+[Play a game of cootie]
+Your cootie was completed in 43 dice rolls.
+
+Do you want to play again[y/n] y
+
+[Play a game of cootie]
+Your cootie was completed in 21 dice rolls.
+
+Do you want to play again[y/n] y
+
+[Play a game of cootie]
+Your cootie was completed in 31 dice rolls.
+
+Do you want to play again[y/n] n
+
+Bye.
+
+ 

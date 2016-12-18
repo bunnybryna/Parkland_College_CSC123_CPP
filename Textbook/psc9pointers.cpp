@@ -142,7 +142,7 @@ int index_smallest(const int a[], int start_index, int number_used)
     return index_min;
 }
 
-// they are equivalent, subtract two pointers is the umber of indexed variable between the two addresses
+// they are equivalent, subtract two pointers is the number of indexed variable between the two addresses
 for (int i=0;i<array_size;i++)
 {
     cout << *(d+i) << " ";
